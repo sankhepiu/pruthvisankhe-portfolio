@@ -6,185 +6,258 @@
 <title>Pruthvi Sankhe | Cloud Engineer</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
 }
 
-body {
-    background: #07080c;
-    color: #f5f5f7;
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
-                 "Helvetica Neue", sans-serif;
-    overflow-x: hidden;
+body{
+    background:#07080c;
+    color:#f5f5f7;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;
+    overflow-x:hidden;
 }
 
-/* ===== Animated Gradient Mesh ===== */
+/* ===== Animated Background Mesh ===== */
 
-body::before {
-    content: "";
-    position: fixed;
-    width: 1100px;
-    height: 1100px;
-    background: radial-gradient(circle, rgba(47,107,255,0.25), transparent 70%);
-    top: -300px;
-    right: -200px;
-    z-index: -2;
-    animation: drift1 18s ease-in-out infinite alternate;
+body::before{
+    content:"";
+    position:fixed;
+    width:1100px;
+    height:1100px;
+    background:radial-gradient(circle,rgba(47,107,255,0.25),transparent 70%);
+    top:-300px;
+    right:-200px;
+    z-index:-2;
+    animation:drift1 18s ease-in-out infinite alternate;
 }
 
-body::after {
-    content: "";
-    position: fixed;
-    width: 900px;
-    height: 900px;
-    background: radial-gradient(circle, rgba(120,80,255,0.18), transparent 70%);
-    bottom: -300px;
-    left: -200px;
-    z-index: -2;
-    animation: drift2 22s ease-in-out infinite alternate;
+body::after{
+    content:"";
+    position:fixed;
+    width:900px;
+    height:900px;
+    background:radial-gradient(circle,rgba(120,80,255,0.18),transparent 70%);
+    bottom:-300px;
+    left:-200px;
+    z-index:-2;
+    animation:drift2 22s ease-in-out infinite alternate;
 }
 
-@keyframes drift1 {
-    from { transform: translate(0,0); }
-    to { transform: translate(-120px,150px); }
+@keyframes drift1{
+    from{transform:translate(0,0);}
+    to{transform:translate(-120px,150px);}
 }
 
-@keyframes drift2 {
-    from { transform: translate(0,0); }
-    to { transform: translate(120px,-120px); }
+@keyframes drift2{
+    from{transform:translate(0,0);}
+    to{transform:translate(120px,-120px);}
 }
 
 /* ===== NAVBAR ===== */
 
-.navbar {
-    position: fixed;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 14px 45px;
-    background: rgba(20,20,25,0.55);
-    backdrop-filter: blur(20px);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 40px;
-    z-index: 1000;
+.navbar{
+    position:fixed;
+    top:30px;
+    left:50%;
+    transform:translateX(-50%);
+    padding:14px 45px;
+    background:rgba(20,20,25,0.55);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:40px;
+    z-index:1000;
 }
 
-.navbar ul {
-    display: flex;
-    gap: 50px;
-    list-style: none;
+.navbar ul{
+    display:flex;
+    gap:50px;
+    list-style:none;
 }
 
-.navbar a {
-    text-decoration: none;
-    color: #cfcfd2;
-    font-size: 0.95rem;
-    font-weight: 400;
-    position: relative;
-    transition: color 0.3s ease;
+.navbar a{
+    text-decoration:none;
+    color:#cfcfd2;
+    font-size:0.95rem;
+    position:relative;
+    transition:0.3s;
 }
 
-/* Elegant underline animation */
-.navbar a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 1px;
-    left: 0;
-    bottom: -4px;
-    background: #2f6bff;
-    transition: width 0.3s ease;
+.navbar a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:1px;
+    left:0;
+    bottom:-4px;
+    background:#2f6bff;
+    transition:0.3s;
 }
 
-.navbar a:hover {
-    color: #ffffff;
+.navbar a:hover{
+    color:#fff;
 }
 
-.navbar a:hover::after {
-    width: 100%;
+.navbar a:hover::after{
+    width:100%;
 }
 
 /* ===== HERO ===== */
 
-.hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 0 8%;
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
 }
 
-.hero-text {
-    max-width: 850px;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeIn 1.5s ease forwards;
+.hero-text{
+    max-width:850px;
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hero-text h1{
+    font-size:4.8rem;
+    font-weight:500;
+    letter-spacing:-2px;
 }
 
-.hero-text h1 {
-    font-size: 4.8rem;
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: -2px;
+.hero-text h2{
+    margin-top:25px;
+    font-size:1.4rem;
+    background:linear-gradient(90deg,#2f6bff,#7850ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
 }
 
-.hero-text h2 {
-    margin-top: 25px;
-    font-size: 1.4rem;
-    font-weight: 400;
-    background: linear-gradient(90deg,#2f6bff,#7850ff);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.hero-text p{
+    margin-top:35px;
+    font-size:1.15rem;
+    line-height:1.7;
+    color:#a1a1aa;
 }
 
-.hero-text .sub {
-    margin-top: 12px;
-    font-size: 1rem;
-    color: #8e8e93;
+.btn{
+    display:inline-block;
+    margin-top:45px;
+    padding:14px 36px;
+    border-radius:30px;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(90deg,#2f6bff,#7850ff);
+    transition:0.3s;
 }
 
-.hero-text p {
-    margin-top: 35px;
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: #a1a1aa;
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(47,107,255,0.4);
 }
 
-/* ===== BUTTON ===== */
+/* ===== SECTIONS ===== */
 
-.btn {
-    display: inline-block;
-    margin-top: 45px;
-    padding: 14px 36px;
-    border-radius: 30px;
-    font-size: 0.95rem;
-    text-decoration: none;
-    color: #fff;
-    background: linear-gradient(90deg,#2f6bff,#7850ff);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+section{
+    padding:120px 8%;
 }
 
-.btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(47,107,255,0.4);
+.section-title{
+    font-size:2rem;
+    margin-bottom:60px;
 }
 
-/* ===== FOOTER ===== */
+/* ===== PROJECT CARDS ===== */
 
-footer {
-    text-align: center;
-    padding: 40px;
-    font-size: 0.85rem;
-    color: #6e6e73;
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+}
+
+.project-card{
+    padding:40px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.05);
+    border-radius:20px;
+    transition:0.4s;
+    transform-style:preserve-3d;
+}
+
+.project-card:hover{
+    transform:rotateY(5deg) rotateX(5deg) translateY(-8px);
+    border:1px solid rgba(47,107,255,0.4);
+}
+
+/* ===== SKILLS ===== */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.skill{
+    padding:12px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.08);
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+    100%{transform:translateY(0);}
+}
+
+/* ===== CONTACT FORM ===== */
+
+.contact-form{
+    max-width:600px;
+    background:rgba(255,255,255,0.04);
+    padding:50px;
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,0.06);
+    backdrop-filter:blur(15px);
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:14px;
+    margin-bottom:20px;
+    background:rgba(255,255,255,0.05);
+    border:none;
+    border-radius:10px;
+    color:#fff;
+    font-family:inherit;
+}
+
+.contact-form button{
+    padding:14px 30px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(90deg,#2f6bff,#7850ff);
+    color:#fff;
+    cursor:pointer;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#6e6e73;
+}
+
+/* ===== SCROLL REVEAL ===== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
 }
 
 </style>
@@ -193,30 +266,82 @@ footer {
 <body>
 
 <nav class="navbar">
-    <ul>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
+<ul>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
 </nav>
 
 <section class="hero">
-    <div class="hero-text">
-        <h1>Pruthvi Sankhe</h1>
-        <h2>Aspiring Cloud Engineer</h2>
-        <div class="sub">3rd Year Computer Science Student — VIT Vellore</div>
-        <p>
-            Computer Science undergraduate focused on cloud architecture,
-            infrastructure automation, and building scalable systems using AWS
-            and modern DevOps practices.
-        </p>
-        <a href="#" class="btn">View Projects</a>
-    </div>
+<div class="hero-text reveal">
+<h1>Pruthvi Sankhe</h1>
+<h2>Aspiring Cloud Engineer</h2>
+<p>
+Computer Science undergraduate focused on cloud architecture,
+infrastructure automation, and building scalable systems using AWS
+and modern DevOps practices.
+</p>
+<a href="#projects" class="btn">View Projects</a>
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title reveal">Projects</h2>
+<div class="project-grid">
+<div class="project-card reveal">
+<h3>AWS Static Deployment</h3>
+<p>Hosted a static portfolio using S3, CloudFront and Route53 with CI/CD via GitHub Actions.</p>
+</div>
+<div class="project-card reveal">
+<h3>Terraform Infrastructure</h3>
+<p>Provisioned scalable infrastructure using Terraform with modular design.</p>
+</div>
+<div class="project-card reveal">
+<h3>Dockerized Application</h3>
+<p>Containerized and deployed application on AWS EC2 with Nginx.</p>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title reveal">Skills</h2>
+<div class="skills">
+<div class="skill">AWS</div>
+<div class="skill">Terraform</div>
+<div class="skill">Docker</div>
+<div class="skill">Linux</div>
+<div class="skill">CI/CD</div>
+<div class="skill">GitHub Actions</div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title reveal">Contact</h2>
+<div class="contact-form reveal">
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="5" placeholder="Message"></textarea>
+<button>Send Message</button>
+</div>
 </section>
 
 <footer>
 © 2026 Pruthvi Sankhe
 </footer>
+
+<script>
+window.addEventListener("scroll", function(){
+    let reveals=document.querySelectorAll(".reveal");
+    for(let i=0;i<reveals.length;i++){
+        let windowHeight=window.innerHeight;
+        let elementTop=reveals[i].getBoundingClientRect().top;
+        if(elementTop < windowHeight - 100){
+            reveals[i].classList.add("active");
+        }
+    }
+});
+</script>
 
 </body>
 </html>
