@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pruthvi Sankhe | Cloud Engineer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 100px 20px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+header h1 {
+    font-size: 3rem;
+}
+
+header span {
+    color: #00d4ff;
+}
+
+section {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+button {
+    background: #00d4ff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+button:hover {
+    background: #00a8cc;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.3);
+    margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Hello, I'm <span>Pruthvi Sankhe</span></h1>
+    <p>3rd Year BTech CSE Student | Aspiring Cloud Engineer | AWS Enthusiast</p>
+    <button onclick="scrollToProjects()">View My Work</button>
+</header>
+
+<section>
+    <h2>About Me</h2>
+    <div class="card">
+        <p>I am a passionate Computer Science student focused on Cloud Computing and DevOps. 
+        I enjoy building scalable systems and automating deployments using AWS services.</p>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="card">
+        <h3>AWS Static Website Hosting</h3>
+        <p>Deployed a static website using Amazon S3 and CloudFront with secure configuration.</p>
+    </div>
+
+    <div class="card">
+        <h3>CI/CD Pipeline with GitHub Actions</h3>
+        <p>Automated deployment to AWS S3 on every GitHub push.</p>
+    </div>
+
+</section>
+
+<section>
+    <h2>Skills</h2>
+
+    <div class="card">☁️ AWS (S3, EC2, IAM, CloudFront)</div>
+    <div class="card">🔧 Git & GitHub</div>
+    <div class="card">🚀 CI/CD & DevOps Fundamentals</div>
+
+</section>
+
+<footer>
+    <p>© 2026 Pruthvi Sankhe | Built with AWS & Passion</p>
+</footer>
+
+<script>
+function scrollToProjects() {
+    document.getElementById("projects").scrollIntoView({behavior: "smooth"});
+}
+</script>
+
+</body>
+</html>
