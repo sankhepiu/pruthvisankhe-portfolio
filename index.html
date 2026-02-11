@@ -16,37 +16,22 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(to bottom, #0a0f1c, #111827);
+    background: linear-gradient(to bottom, #05070f, #0a0f1c 40%, #111827);
     color: white;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 /* NAVBAR */
 nav {
+    position: relative;
+    z-index: 10;
     display: flex;
     justify-content: space-between;
     padding: 25px 8%;
-    position: relative;
-    z-index: 10;
 }
 
 nav h2 {
     font-weight: 800;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-nav ul li {
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-nav ul li:hover {
-    color: #38bdf8;
 }
 
 /* HERO */
@@ -56,11 +41,7 @@ nav ul li:hover {
     display: flex;
     align-items: center;
     padding: 0 8%;
-    z-index: 2;
-}
-
-.hero-text {
-    max-width: 600px;
+    z-index: 5;
 }
 
 .hero-text h1 {
@@ -74,127 +55,109 @@ nav ul li:hover {
 
 .hero-text p {
     margin-top: 20px;
-    font-size: 1.2rem;
     color: #cbd5e1;
 }
 
-/* CLOUDS */
-.cloud {
+/* STORM CLOUD LAYERS */
+.cloud-layer {
     position: absolute;
-    background: #1e293b;
-    border-radius: 50%;
-    opacity: 0.9;
-    filter: blur(10px);
+    width: 200%;
+    height: 300px;
+    background: radial-gradient(circle at 30% 50%, #111 20%, #000 70%);
+    opacity: 0.8;
+    filter: blur(60px);
 }
 
-.cloud::before,
-.cloud::after {
-    content: "";
-    position: absolute;
-    background: #1e293b;
-    border-radius: 50%;
-}
-
-.cloud1 {
-    width: 300px;
-    height: 120px;
+.layer1 {
     top: 20%;
-    left: -300px;
-    animation: moveClouds 60s linear infinite;
+    animation: moveClouds 120s linear infinite;
 }
 
-.cloud1::before {
-    width: 150px;
-    height: 150px;
-    top: -50px;
-    left: 50px;
+.layer2 {
+    top: 35%;
+    animation: moveClouds 160s linear infinite reverse;
 }
 
-.cloud1::after {
-    width: 200px;
-    height: 150px;
-    top: -30px;
-    right: 40px;
-}
-
-.cloud2 {
-    width: 400px;
-    height: 150px;
+.layer3 {
     top: 50%;
-    left: -400px;
-    animation: moveClouds 90s linear infinite;
-}
-
-.cloud2::before {
-    width: 180px;
-    height: 180px;
-    top: -60px;
-    left: 80px;
-}
-
-.cloud2::after {
-    width: 220px;
-    height: 170px;
-    top: -40px;
-    right: 60px;
+    animation: moveClouds 200s linear infinite;
 }
 
 @keyframes moveClouds {
-    from { transform: translateX(0); }
-    to { transform: translateX(200vw); }
+    from { transform: translateX(-50%); }
+    to { transform: translateX(50%); }
 }
 
-/* LIGHTNING */
+/* LIGHTNING BOLT */
 .lightning {
     position: absolute;
-    width: 2px;
+    top: 30%;
+    left: 60%;
+    width: 6px;
     height: 120px;
     background: white;
-    top: 30%;
-    left: 50%;
+    clip-path: polygon(50% 0%, 60% 30%, 40% 30%, 55% 60%, 35% 60%, 50% 100%);
     opacity: 0;
-    animation: flash 7s infinite;
+    animation: lightningFlash 6s infinite;
 }
 
-@keyframes flash {
+@keyframes lightningFlash {
     0%, 95%, 100% { opacity: 0; }
-    96% { opacity: 1; box-shadow: 0 0 20px white; }
+    96% { 
+        opacity: 1; 
+        box-shadow: 0 0 30px #fff, 0 0 60px #38bdf8;
+    }
 }
 
-/* FOOTER */
+/* SCREEN FLASH EFFECT */
+.flash {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0;
+    animation: screenFlash 6s infinite;
+}
+
+@keyframes screenFlash {
+    0%, 95%, 100% { opacity: 0; }
+    96% { opacity: 0.15; }
+}
+
 footer {
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
     text-align: center;
-    padding: 20px;
-    background: #0f172a;
+    font-size: 0.9rem;
+    opacity: 0.6;
 }
 </style>
 </head>
 
 <body>
 
+<div class="flash"></div>
+
+<div class="cloud-layer layer1"></div>
+<div class="cloud-layer layer2"></div>
+<div class="cloud-layer layer3"></div>
+
+<div class="lightning"></div>
+
 <nav>
     <h2>Pruthvi Sankhe</h2>
-    <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Projects</li>
-        <li>Contact</li>
-    </ul>
 </nav>
-
-<div class="cloud cloud1"></div>
-<div class="cloud cloud2"></div>
-<div class="lightning"></div>
 
 <section class="hero">
     <div class="hero-text">
         <h1>Aspiring <span>Cloud Engineer</span></h1>
-        <p>Building scalable cloud solutions and automating infrastructure using AWS & DevOps practices.</p>
+        <p>Computer Science undergraduate student focused on cloud architecture, infrastructure automation, and building reliable systems using AWS.</p>
     </div>
 </section>
 
 <footer>
-    © 2026 Pruthvi Sankhe | AWS Cloud Portfolio
+© 2026 Pruthvi Sankhe | AWS Cloud Portfolio
 </footer>
 
 </body>
