@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Name | Cloud Engineer</title>
+<title>Pruthvi Sankhe | Cloud Engineer</title>
 
 <style>
 *{
@@ -115,16 +115,6 @@ body::after{
 
 .hero-text{
     max-width:850px;
-    opacity:0;
-    transform:translateY(30px);
-    animation:fadeIn 1.5s ease forwards;
-}
-
-@keyframes fadeIn{
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
 }
 
 .hero-text h1{
@@ -196,7 +186,7 @@ section{
     border:1px solid rgba(47,107,255,0.4);
 }
 
-/* ===== SKILLS (PROFESSIONAL LIST STYLE) ===== */
+/* ===== SKILLS ===== */
 
 .skills-container{
     display:grid;
@@ -243,19 +233,6 @@ footer{
     color:#6e6e73;
 }
 
-/* ===== SCROLL REVEAL ===== */
-
-.reveal{
-    opacity:0;
-    transform:translateY(40px);
-    transition:1s;
-}
-
-.reveal.active{
-    opacity:1;
-    transform:translateY(0);
-}
-
 </style>
 </head>
 
@@ -271,54 +248,74 @@ footer{
 
 <section class="hero">
 <div class="hero-text">
-<h1>Your Name</h1>
+<h1>Pruthvi Sankhe</h1>
 <h2>Aspiring Cloud Engineer</h2>
 <p>
-Short professional summary about you goes here.
-Replace this text with your actual description.
+Computer Science undergraduate at Vellore Institute of Technology,
+focused on cloud architecture, infrastructure automation,
+and building scalable systems using AWS and modern DevOps practices.
 </p>
 <a href="#projects" class="btn">View Projects</a>
 </div>
 </section>
 
 <section id="projects">
-<h2 class="section-title reveal">Projects</h2>
+<h2 class="section-title">Projects</h2>
 <div class="project-grid">
-<div class="project-card reveal">
-<h3>Project Title</h3>
-<p>Project description goes here.</p>
+
+<div class="project-card">
+<h3>AWS Static Portfolio Deployment</h3>
+<p>
+Designed and deployed a static portfolio website using Amazon S3 and CloudFront,
+with automated CI/CD integration via GitHub Actions.
+</p>
 </div>
-<div class="project-card reveal">
-<h3>Project Title</h3>
-<p>Project description goes here.</p>
+
+<div class="project-card">
+<h3>Infrastructure Automation with Terraform</h3>
+<p>
+Provisioned and managed AWS infrastructure using Terraform,
+focusing on modular design and repeatable deployments.
+</p>
 </div>
+
+<div class="project-card">
+<h3>Dockerized Web Application on EC2</h3>
+<p>
+Containerized a web application using Docker and deployed it on AWS EC2
+with reverse proxy configuration and secure access setup.
+</p>
+</div>
+
 </div>
 </section>
 
 <section id="skills">
-<h2 class="section-title reveal">Skills</h2>
+<h2 class="section-title">Skills</h2>
 
 <div class="skills-container">
 
-<div class="skill-group reveal">
-<h3>Cloud</h3>
+<div class="skill-group">
+<h3>Cloud Platforms</h3>
 <ul>
-<li>• ____________________</li>
+<li>• AWS (S3, EC2, IAM, CloudFront)</li>
 <li>• ____________________</li>
 <li>• ____________________</li>
 </ul>
 </div>
 
-<div class="skill-group reveal">
+<div class="skill-group">
 <h3>DevOps & Tools</h3>
 <ul>
-<li>• ____________________</li>
-<li>• ____________________</li>
+<li>• Git & GitHub</li>
+<li>• GitHub Actions (CI/CD)</li>
+<li>• Docker</li>
+<li>• Terraform</li>
 <li>• ____________________</li>
 </ul>
 </div>
 
-<div class="skill-group reveal">
+<div class="skill-group">
 <h3>Programming</h3>
 <ul>
 <li>• ____________________</li>
@@ -327,11 +324,11 @@ Replace this text with your actual description.
 </ul>
 </div>
 
-<div class="skill-group reveal">
+<div class="skill-group">
 <h3>Other</h3>
 <ul>
-<li>• ____________________</li>
-<li>• ____________________</li>
+<li>• Linux Fundamentals</li>
+<li>• Networking Basics</li>
 <li>• ____________________</li>
 </ul>
 </div>
@@ -340,35 +337,21 @@ Replace this text with your actual description.
 </section>
 
 <section id="contact">
-<h2 class="section-title reveal">Contact</h2>
+<h2 class="section-title">Contact</h2>
 
-<div class="contact-info reveal">
+<div class="contact-info">
 <p>Email: ____________________</p>
 <p>LinkedIn: <a href="#">____________________</a></p>
 <p>GitHub: <a href="#">____________________</a></p>
+<p>Phone: ____________________</p>
 <p>Location: ____________________</p>
 </div>
 
 </section>
 
 <footer>
-© 2026 Your Name
+© 2026 Pruthvi Sankhe
 </footer>
-
-<script>
-function revealElements(){
-let reveals=document.querySelectorAll(".reveal");
-for(let i=0;i<reveals.length;i++){
-let windowHeight=window.innerHeight;
-let elementTop=reveals[i].getBoundingClientRect().top;
-if(elementTop < windowHeight - 100){
-reveals[i].classList.add("active");
-}
-}
-}
-window.addEventListener("load", revealElements);
-window.addEventListener("scroll", revealElements);
-</script>
 
 </body>
 </html>
