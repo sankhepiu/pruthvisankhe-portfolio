@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pruthvi Sankhe | Cloud Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -16,76 +16,78 @@
 
 body {
     font-family: 'Inter', sans-serif;
-    color: white;
-    overflow: hidden;
+    color: #e5e7eb;
+    background: linear-gradient(to bottom, #0f172a, #0b1120);
+    overflow-x: hidden;
 }
 
-/* ================= STORM BACKGROUND ================= */
+/* ===== Subtle Moving Cloud Layer ===== */
 
-.background {
+.cloud-bg {
     position: fixed;
-    width: 120%;
+    width: 200%;
     height: 100%;
-    background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),
-        url("storm.jpeg") center/cover no-repeat;
-    z-index: -2;
-    animation: drift 60s linear infinite;
+    background: radial-gradient(circle at 30% 40%, rgba(255,255,255,0.04), transparent 60%),
+                radial-gradient(circle at 70% 60%, rgba(255,255,255,0.03), transparent 60%);
+    animation: drift 120s linear infinite;
+    z-index: -1;
 }
 
 @keyframes drift {
-    from { transform: translateX(-5%); }
-    to { transform: translateX(5%); }
+    from { transform: translateX(0); }
+    to { transform: translateX(-25%); }
 }
 
-/* ================= LIGHTNING FLASH ================= */
-
-.flash {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: white;
-    opacity: 0;
-    z-index: -1;
-    animation: flash 4s infinite;
-}
-
-@keyframes flash {
-    0%, 88%, 100% { opacity: 0; }
-    90% { opacity: 0.25; }
-    92% { opacity: 0; }
-    94% { opacity: 0.35; }
-    96% { opacity: 0; }
-}
-
-/* ================= NAVBAR ================= */
+/* ===== Navbar ===== */
 
 nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 30px 8%;
 }
 
 nav h2 {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: 800;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    background: linear-gradient(90deg, #ffffff, #38bdf8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    color: #ffffff;
 }
 
-/* ================= HERO ================= */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul li {
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+nav ul li:hover {
+    color: #38bdf8;
+}
+
+/* ===== Hero Section ===== */
 
 .hero {
-    height: 100vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     padding: 0 8%;
 }
 
+.hero-text {
+    max-width: 700px;
+}
+
 .hero-text h1 {
-    font-size: 4.2rem;
+    font-size: 3.8rem;
     font-weight: 800;
+    line-height: 1.2;
+    color: #ffffff;
 }
 
 .hero-text span {
@@ -95,40 +97,61 @@ nav h2 {
 .hero-text p {
     margin-top: 25px;
     font-size: 1.2rem;
-    max-width: 650px;
-    color: #e2e8f0;
+    color: #9ca3af;
     line-height: 1.6;
 }
 
-/* ================= FOOTER ================= */
+/* ===== Button ===== */
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 28px;
+    background: #38bdf8;
+    color: #0f172a;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #0ea5e9;
+}
+
+/* ===== Footer ===== */
 
 footer {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
     text-align: center;
-    opacity: 0.7;
+    padding: 25px 0;
     font-size: 0.9rem;
+    color: #6b7280;
 }
 </style>
 </head>
 
 <body>
 
-<div class="background"></div>
-<div class="flash"></div>
+<div class="cloud-bg"></div>
 
 <nav>
     <h2>Pruthvi Sankhe</h2>
+    <ul>
+        <li>About</li>
+        <li>Projects</li>
+        <li>Contact</li>
+    </ul>
 </nav>
 
 <section class="hero">
     <div class="hero-text">
-        <h1>Aspiring <span>Cloud Engineer</span></h1>
+        <h1>Building Reliable <span>Cloud Infrastructure</span></h1>
         <p>
             Computer Science undergraduate focused on cloud architecture, 
-            infrastructure automation, and building reliable systems using AWS.
+            infrastructure automation, and designing scalable systems using AWS 
+            and modern DevOps practices.
         </p>
+        <a href="#" class="btn">View Projects</a>
     </div>
 </section>
 
