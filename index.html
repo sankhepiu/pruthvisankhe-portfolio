@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pruthvi Sankhe | Cloud Engineer</title>
+<title>Your Name | Cloud Engineer</title>
 
 <style>
 *{
@@ -115,6 +115,16 @@ body::after{
 
 .hero-text{
     max-width:850px;
+    opacity:0;
+    transform:translateY(30px);
+    animation:fadeIn 1.5s ease forwards;
+}
+
+@keyframes fadeIn{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 .hero-text h1{
@@ -165,7 +175,7 @@ section{
     margin-bottom:60px;
 }
 
-/* ===== PROJECT CARDS ===== */
+/* ===== PROJECTS ===== */
 
 .project-grid{
     display:grid;
@@ -179,66 +189,52 @@ section{
     border:1px solid rgba(255,255,255,0.05);
     border-radius:20px;
     transition:0.4s;
-    transform-style:preserve-3d;
 }
 
 .project-card:hover{
-    transform:rotateY(5deg) rotateX(5deg) translateY(-8px);
+    transform:translateY(-8px);
     border:1px solid rgba(47,107,255,0.4);
 }
 
-/* ===== SKILLS ===== */
+/* ===== SKILLS (PROFESSIONAL LIST STYLE) ===== */
 
-.skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
+.skills-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
 }
 
-.skill{
-    padding:12px 25px;
-    border-radius:30px;
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.08);
-    animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
-    100%{transform:translateY(0);}
-}
-
-/* ===== CONTACT FORM ===== */
-
-.contact-form{
-    max-width:600px;
-    background:rgba(255,255,255,0.04);
-    padding:50px;
-    border-radius:20px;
-    border:1px solid rgba(255,255,255,0.06);
-    backdrop-filter:blur(15px);
-}
-
-.contact-form input,
-.contact-form textarea{
-    width:100%;
-    padding:14px;
+.skill-group h3{
+    font-size:1.2rem;
     margin-bottom:20px;
-    background:rgba(255,255,255,0.05);
-    border:none;
-    border-radius:10px;
-    color:#fff;
-    font-family:inherit;
+    color:#2f6bff;
 }
 
-.contact-form button{
-    padding:14px 30px;
-    border:none;
-    border-radius:30px;
-    background:linear-gradient(90deg,#2f6bff,#7850ff);
-    color:#fff;
-    cursor:pointer;
+.skill-group ul{
+    list-style:none;
+}
+
+.skill-group li{
+    margin-bottom:12px;
+    color:#a1a1aa;
+    font-size:1rem;
+}
+
+/* ===== CONTACT ===== */
+
+.contact-info{
+    max-width:600px;
+}
+
+.contact-info p{
+    margin-bottom:18px;
+    font-size:1rem;
+    color:#a1a1aa;
+}
+
+.contact-info a{
+    color:#2f6bff;
+    text-decoration:none;
 }
 
 footer{
@@ -274,13 +270,12 @@ footer{
 </nav>
 
 <section class="hero">
-<div class="hero-text reveal">
-<h1>Pruthvi Sankhe</h1>
+<div class="hero-text">
+<h1>Your Name</h1>
 <h2>Aspiring Cloud Engineer</h2>
 <p>
-Computer Science undergraduate focused on cloud architecture,
-infrastructure automation, and building scalable systems using AWS
-and modern DevOps practices.
+Short professional summary about you goes here.
+Replace this text with your actual description.
 </p>
 <a href="#projects" class="btn">View Projects</a>
 </div>
@@ -290,64 +285,90 @@ and modern DevOps practices.
 <h2 class="section-title reveal">Projects</h2>
 <div class="project-grid">
 <div class="project-card reveal">
-<h3>AWS Static Deployment</h3>
-<p>Hosted a static portfolio using S3, CloudFront and Route53 with CI/CD via GitHub Actions.</p>
+<h3>Project Title</h3>
+<p>Project description goes here.</p>
 </div>
 <div class="project-card reveal">
-<h3>Terraform Infrastructure</h3>
-<p>Provisioned scalable infrastructure using Terraform with modular design.</p>
-</div>
-<div class="project-card reveal">
-<h3>Dockerized Application</h3>
-<p>Containerized and deployed application on AWS EC2 with Nginx.</p>
+<h3>Project Title</h3>
+<p>Project description goes here.</p>
 </div>
 </div>
 </section>
 
 <section id="skills">
 <h2 class="section-title reveal">Skills</h2>
-<div class="skills">
-<div class="skill">AWS</div>
-<div class="skill">Terraform</div>
-<div class="skill">Docker</div>
-<div class="skill">Linux</div>
-<div class="skill">CI/CD</div>
-<div class="skill">GitHub Actions</div>
+
+<div class="skills-container">
+
+<div class="skill-group reveal">
+<h3>Cloud</h3>
+<ul>
+<li>• ____________________</li>
+<li>• ____________________</li>
+<li>• ____________________</li>
+</ul>
+</div>
+
+<div class="skill-group reveal">
+<h3>DevOps & Tools</h3>
+<ul>
+<li>• ____________________</li>
+<li>• ____________________</li>
+<li>• ____________________</li>
+</ul>
+</div>
+
+<div class="skill-group reveal">
+<h3>Programming</h3>
+<ul>
+<li>• ____________________</li>
+<li>• ____________________</li>
+<li>• ____________________</li>
+</ul>
+</div>
+
+<div class="skill-group reveal">
+<h3>Other</h3>
+<ul>
+<li>• ____________________</li>
+<li>• ____________________</li>
+<li>• ____________________</li>
+</ul>
+</div>
+
 </div>
 </section>
 
 <section id="contact">
 <h2 class="section-title reveal">Contact</h2>
-<div class="contact-form reveal">
-<input type="text" placeholder="Your Name">
-<input type="email" placeholder="Your Email">
-<textarea rows="5" placeholder="Message"></textarea>
-<button>Send Message</button>
+
+<div class="contact-info reveal">
+<p>Email: ____________________</p>
+<p>LinkedIn: <a href="#">____________________</a></p>
+<p>GitHub: <a href="#">____________________</a></p>
+<p>Location: ____________________</p>
 </div>
+
 </section>
 
 <footer>
-© 2026 Pruthvi Sankhe
+© 2026 Your Name
 </footer>
 
 <script>
-function revealElements() {
-    let reveals = document.querySelectorAll(".reveal");
-
-    for (let i = 0; i < reveals.length; i++) {
-        let windowHeight = window.innerHeight;
-        let elementTop = reveals[i].getBoundingClientRect().top;
-
-        if (elementTop < windowHeight - 100) {
-            reveals[i].classList.add("active");
-        }
-    }
+function revealElements(){
+let reveals=document.querySelectorAll(".reveal");
+for(let i=0;i<reveals.length;i++){
+let windowHeight=window.innerHeight;
+let elementTop=reveals[i].getBoundingClientRect().top;
+if(elementTop < windowHeight - 100){
+reveals[i].classList.add("active");
 }
-
+}
+}
 window.addEventListener("load", revealElements);
 window.addEventListener("scroll", revealElements);
 </script>
-
 
 </body>
 </html>
