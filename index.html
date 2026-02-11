@@ -5,128 +5,197 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pruthvi Sankhe | Cloud Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600;800&display=swap" rel="stylesheet">
 
 <style>
-body {
+* {
     margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to bottom, #0a0f1c, #111827);
     color: white;
     overflow-x: hidden;
 }
 
-header {
-    text-align: center;
-    padding: 100px 20px;
-    animation: fadeIn 2s ease-in-out;
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 8%;
+    position: relative;
+    z-index: 10;
 }
 
-header h1 {
-    font-size: 3rem;
+nav h2 {
+    font-weight: 800;
 }
 
-header span {
-    color: #00d4ff;
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
 }
 
-section {
-    padding: 60px 20px;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.card {
-    background: rgba(255,255,255,0.1);
-    backdrop-filter: blur(10px);
-    padding: 20px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-button {
-    background: #00d4ff;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
+nav ul li {
     cursor: pointer;
-    font-weight: bold;
-    font-size: 1rem;
+    transition: 0.3s;
 }
 
-button:hover {
-    background: #00a8cc;
+nav ul li:hover {
+    color: #38bdf8;
 }
 
-@keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
+/* HERO */
+.hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    z-index: 2;
 }
 
+.hero-text {
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+
+.hero-text span {
+    color: #38bdf8;
+}
+
+.hero-text p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    color: #cbd5e1;
+}
+
+/* CLOUDS */
+.cloud {
+    position: absolute;
+    background: #1e293b;
+    border-radius: 50%;
+    opacity: 0.9;
+    filter: blur(10px);
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: #1e293b;
+    border-radius: 50%;
+}
+
+.cloud1 {
+    width: 300px;
+    height: 120px;
+    top: 20%;
+    left: -300px;
+    animation: moveClouds 60s linear infinite;
+}
+
+.cloud1::before {
+    width: 150px;
+    height: 150px;
+    top: -50px;
+    left: 50px;
+}
+
+.cloud1::after {
+    width: 200px;
+    height: 150px;
+    top: -30px;
+    right: 40px;
+}
+
+.cloud2 {
+    width: 400px;
+    height: 150px;
+    top: 50%;
+    left: -400px;
+    animation: moveClouds 90s linear infinite;
+}
+
+.cloud2::before {
+    width: 180px;
+    height: 180px;
+    top: -60px;
+    left: 80px;
+}
+
+.cloud2::after {
+    width: 220px;
+    height: 170px;
+    top: -40px;
+    right: 60px;
+}
+
+@keyframes moveClouds {
+    from { transform: translateX(0); }
+    to { transform: translateX(200vw); }
+}
+
+/* LIGHTNING */
+.lightning {
+    position: absolute;
+    width: 2px;
+    height: 120px;
+    background: white;
+    top: 30%;
+    left: 50%;
+    opacity: 0;
+    animation: flash 7s infinite;
+}
+
+@keyframes flash {
+    0%, 95%, 100% { opacity: 0; }
+    96% { opacity: 1; box-shadow: 0 0 20px white; }
+}
+
+/* FOOTER */
 footer {
     text-align: center;
     padding: 20px;
-    background: rgba(0,0,0,0.3);
-    margin-top: 40px;
+    background: #0f172a;
 }
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Hello, I'm <span>Pruthvi Sankhe</span></h1>
-    <p>3rd Year BTech CSE Student | Aspiring Cloud Engineer | AWS Enthusiast</p>
-    <button onclick="scrollToProjects()">View My Work</button>
-</header>
+<nav>
+    <h2>Pruthvi Sankhe</h2>
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Projects</li>
+        <li>Contact</li>
+    </ul>
+</nav>
 
-<section>
-    <h2>About Me</h2>
-    <div class="card">
-        <p>I am a passionate Computer Science student focused on Cloud Computing and DevOps. 
-        I enjoy building scalable systems and automating deployments using AWS services.</p>
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+<div class="lightning"></div>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Aspiring <span>Cloud Engineer</span></h1>
+        <p>Building scalable cloud solutions and automating infrastructure using AWS & DevOps practices.</p>
     </div>
-</section>
-
-<section id="projects">
-    <h2>Projects</h2>
-
-    <div class="card">
-        <h3>AWS Static Website Hosting</h3>
-        <p>Deployed a static website using Amazon S3 and CloudFront with secure configuration.</p>
-    </div>
-
-    <div class="card">
-        <h3>CI/CD Pipeline with GitHub Actions</h3>
-        <p>Automated deployment to AWS S3 on every GitHub push.</p>
-    </div>
-
-</section>
-
-<section>
-    <h2>Skills</h2>
-
-    <div class="card">☁️ AWS (S3, EC2, IAM, CloudFront)</div>
-    <div class="card">🔧 Git & GitHub</div>
-    <div class="card">🚀 CI/CD & DevOps Fundamentals</div>
-
 </section>
 
 <footer>
-    <p>© 2026 Pruthvi Sankhe | Built with AWS & Passion</p>
+    © 2026 Pruthvi Sankhe | AWS Cloud Portfolio
 </footer>
-
-<script>
-function scrollToProjects() {
-    document.getElementById("projects").scrollIntoView({behavior: "smooth"});
-}
-</script>
 
 </body>
 </html>
