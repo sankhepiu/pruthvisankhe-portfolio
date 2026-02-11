@@ -20,36 +20,36 @@ body {
     overflow-x: hidden;
 }
 
-/* Subtle animated depth lighting */
+/* ================= Background Depth Lighting ================= */
 
 body::before {
     content: "";
     position: fixed;
-    width: 900px;
-    height: 900px;
-    background: radial-gradient(circle, rgba(40, 90, 140, 0.15), transparent 70%);
-    top: -300px;
-    right: -200px;
+    width: 1100px;
+    height: 1100px;
+    background: radial-gradient(circle, rgba(37, 99, 235, 0.25), transparent 70%);
+    top: -350px;
+    right: -250px;
     z-index: -1;
-    animation: drift 20s ease-in-out infinite alternate;
+    animation: drift 18s ease-in-out infinite alternate;
 }
 
 @keyframes drift {
     from { transform: translate(0,0); }
-    to { transform: translate(-120px,120px); }
+    to { transform: translate(-140px,120px); }
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 nav {
     display: flex;
     justify-content: space-between;
-    padding: 40px 8%;
+    padding: 45px 8%;
     align-items: center;
 }
 
 nav h2 {
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     font-weight: 500;
     letter-spacing: 0.5px;
 }
@@ -69,10 +69,10 @@ nav ul li {
 
 nav ul li:hover {
     opacity: 1;
-    color: #4da3ff; /* subtle blue accent */
+    color: #2563eb;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 
 .hero {
     min-height: 85vh;
@@ -82,7 +82,7 @@ nav ul li:hover {
 }
 
 .hero-text {
-    max-width: 800px;
+    max-width: 820px;
     animation: fadeIn 1.4s ease forwards;
     opacity: 0;
     transform: translateY(20px);
@@ -96,29 +96,40 @@ nav ul li:hover {
 }
 
 .hero-text h1 {
-    font-size: 4.2rem;
-    font-weight: 500;
-    line-height: 1.15;
-    letter-spacing: -1px;
+    font-size: 4.6rem;
+    font-weight: 600;
+    letter-spacing: -1.5px;
+    margin-bottom: 12px;
+    color: #f5f5f7;
 }
 
-.hero-text span {
-    color: #4da3ff; /* refined accent */
+.subtitle {
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #2563eb; /* Updated richer blue */
+    margin-bottom: 12px;
+}
+
+.education {
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: #71717a;
+    margin-bottom: 28px;
 }
 
 .hero-text p {
-    margin-top: 30px;
     font-size: 1.15rem;
-    line-height: 1.7;
+    line-height: 1.8;
     color: #a1a1aa;
+    max-width: 620px;
 }
 
-/* BUTTON */
+/* ================= BUTTON ================= */
 
 .btn {
     display: inline-block;
     margin-top: 40px;
-    padding: 14px 34px;
+    padding: 14px 36px;
     border: 1px solid #2c2c2e;
     border-radius: 30px;
     color: #f5f5f7;
@@ -128,12 +139,12 @@ nav ul li:hover {
 }
 
 .btn:hover {
-    background: #4da3ff;
-    border-color: #4da3ff;
-    color: #0a0a0a;
+    background: #2563eb;
+    border-color: #2563eb;
+    color: #ffffff;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer {
     text-align: center;
@@ -147,7 +158,7 @@ footer {
 <body>
 
 <nav>
-    <h2>Aspiring Cloud Engineer</h2>
+    <h2>Pruthvi Sankhe</h2>
     <ul>
         <li>About</li>
         <li>Projects</li>
@@ -157,13 +168,14 @@ footer {
 
 <section class="hero">
     <div class="hero-text">
-        <h1><span>Pruthvi Sankhe</span></h1>
-        <h2>3rd year Student at Vellore Institue of Technology</h2>
+        <h1>Pruthvi Sankhe</h1>
+        <div class="subtitle">Aspiring Cloud Engineer</div>
+        <div class="education">3rd Year Computer Science Student — Vellore Institute of Technology</div>
+
         <p>
-            Computer Science undergraduate focused on cloud architecture,
-            infrastructure automation, and building scalable systems using AWS
-            and modern DevOps practices.
+           Computer Science undergraduate focused on cloud architecture, infrastructure automation, and building scalable systems using AWS and modern DevOps practices.
         </p>
+
         <a href="#" class="btn">View Projects</a>
     </div>
 </section>
