@@ -331,17 +331,23 @@ and modern DevOps practices.
 </footer>
 
 <script>
-window.addEventListener("scroll", function(){
-    let reveals=document.querySelectorAll(".reveal");
-    for(let i=0;i<reveals.length;i++){
-        let windowHeight=window.innerHeight;
-        let elementTop=reveals[i].getBoundingClientRect().top;
-        if(elementTop < windowHeight - 100){
+function revealElements() {
+    let reveals = document.querySelectorAll(".reveal");
+
+    for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+
+        if (elementTop < windowHeight - 100) {
             reveals[i].classList.add("active");
         }
     }
-});
+}
+
+window.addEventListener("load", revealElements);
+window.addEventListener("scroll", revealElements);
 </script>
+
 
 </body>
 </html>
