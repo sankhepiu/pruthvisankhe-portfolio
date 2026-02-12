@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pruthvi Sankhe | Cloud Engineer</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#07080c;
+    color:#f5f5f7;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif;
+    overflow-x:hidden;
+}
+
+/* ===== Animated Background Mesh ===== */
+
+body::before{
+    content:"";
+    position:fixed;
+    width:1100px;
+    height:1100px;
+    background:radial-gradient(circle,rgba(47,107,255,0.25),transparent 70%);
+    top:-300px;
+    right:-200px;
+    z-index:-2;
+    animation:drift1 18s ease-in-out infinite alternate;
+}
+
+body::after{
+    content:"";
+    position:fixed;
+    width:900px;
+    height:900px;
+    background:radial-gradient(circle,rgba(120,80,255,0.18),transparent 70%);
+    bottom:-300px;
+    left:-200px;
+    z-index:-2;
+    animation:drift2 22s ease-in-out infinite alternate;
+}
+
+@keyframes drift1{
+    from{transform:translate(0,0);}
+    to{transform:translate(-120px,150px);}
+}
+
+@keyframes drift2{
+    from{transform:translate(0,0);}
+    to{transform:translate(120px,-120px);}
+}
+
+/* ===== NAVBAR ===== */
+
+.navbar{
+    position:fixed;
+    top:30px;
+    left:50%;
+    transform:translateX(-50%);
+    padding:14px 45px;
+    background:rgba(20,20,25,0.55);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,0.06);
+    border-radius:40px;
+    z-index:1000;
+}
+
+.navbar ul{
+    display:flex;
+    gap:50px;
+    list-style:none;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:#cfcfd2;
+    font-size:0.95rem;
+    position:relative;
+    transition:0.3s;
+}
+
+.navbar a::after{
+    content:"";
+    position:absolute;
+    width:0%;
+    height:1px;
+    left:0;
+    bottom:-4px;
+    background:#2f6bff;
+    transition:0.3s;
+}
+
+.navbar a:hover{
+    color:#fff;
+}
+
+.navbar a:hover::after{
+    width:100%;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+}
+
+.hero-text{
+    max-width:850px;
+}
+
+.hero-text h1{
+    font-size:4.8rem;
+    font-weight:500;
+    letter-spacing:-2px;
+}
+
+.subtitle{
+    margin-top:18px;
+    font-size:1.1rem;
+    font-weight:400;
+    color:#a1a1aa;
+}
+
+.role{
+    margin-top:18px;
+    font-size:1.4rem;
+    background:linear-gradient(90deg,#2f6bff,#7850ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+    margin-top:35px;
+    font-size:1.15rem;
+    line-height:1.7;
+    color:#a1a1aa;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:45px;
+    padding:14px 36px;
+    border-radius:30px;
+    text-decoration:none;
+    color:#fff;
+    background:linear-gradient(90deg,#2f6bff,#7850ff);
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 30px rgba(47,107,255,0.4);
+}
+
+/* ===== SECTIONS ===== */
+
+section{
+    padding:120px 8%;
+}
+
+.section-title{
+    font-size:2rem;
+    margin-bottom:60px;
+}
+
+/* ===== PROJECTS ===== */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:40px;
+}
+
+.project-card{
+    padding:40px;
+    background:rgba(255,255,255,0.03);
+    border:1px solid rgba(255,255,255,0.05);
+    border-radius:20px;
+    transition:0.4s;
+}
+
+.project-card:hover{
+    transform:translateY(-8px);
+    border:1px solid rgba(47,107,255,0.4);
+}
+
+/* ===== SKILLS ===== */
+
+.skills-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+}
+
+.skill-group h3{
+    font-size:1.2rem;
+    margin-bottom:20px;
+    color:#2f6bff;
+}
+
+.skill-group ul{
+    list-style:none;
+}
+
+.skill-group li{
+    margin-bottom:12px;
+    color:#a1a1aa;
+    font-size:1rem;
+}
+
+/* ===== CONTACT ===== */
+
+.contact-info{
+    max-width:600px;
+}
+
+.contact-info p{
+    margin-bottom:18px;
+    font-size:1rem;
+    color:#a1a1aa;
+}
+
+.contact-info a{
+    color:#2f6bff;
+    text-decoration:none;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#6e6e73;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+<ul>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<section class="hero">
+<div class="hero-text">
+
+<h1>Pruthvi Sankhe</h1>
+
+<div class="subtitle">
+3rd Year BTech CSE Student at VIT Vellore
+</div>
+
+<div class="role">Aspiring Cloud Engineer</div>
+
+<p>
+Computer Science undergraduate student focused on cloud architecture,
+infrastructure automation, and building scalable systems using AWS
+and modern DevOps practices.
+</p>
+
+<a href="#projects" class="btn">View Projects</a>
+
+</div>
+</section>
+
+<section id="projects">
+<h2 class="section-title">Projects</h2>
+<div class="project-grid">
+
+<div class="project-card">
+<h3>AWS Static Portfolio Deployment</h3>
+<p>
+Designed and deployed a static portfolio website using Amazon S3 and CloudFront,
+with automated CI/CD integration via GitHub Actions.
+</p>
+</div>
+
+<div class="project-card">
+<h3>Infrastructure Automation with Terraform</h3>
+<p>
+Provisioned and managed AWS infrastructure using Terraform,
+focusing on modular design and repeatable deployments.
+</p>
+</div>
+
+<div class="project-card">
+<h3>Dockerized Web Application on EC2</h3>
+<p>
+Containerized a web application using Docker and deployed it on AWS EC2
+with reverse proxy configuration and secure access setup.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="skills">
+<h2 class="section-title">Skills</h2>
+
+<div class="skills-container">
+
+<div class="skill-group">
+<h3>Cloud Platforms</h3>
+<ul>
+<li>• AWS (S3, EC2, IAM, CloudFront)</li>
+<li>• ____________________</li>
+<li>• ____________________</li>
+</ul>
+</div>
+
+<div class="skill-group">
+<h3>DevOps & Tools</h3>
+<ul>
+<li>• Git & GitHub</li>
+<li>• GitHub Actions (CI/CD)</li>
+<li>• Docker</li>
+<li>• Terraform</li>
+<li>• ____________________</li>
+</ul>
+</div>
+
+<div class="skill-group">
+<h3>Programming</h3>
+<ul>
+<li>• ____________________</li>
+<li>• ____________________</li>
+<li>• ____________________</li>
+</ul>
+</div>
+
+<div class="skill-group">
+<h3>Other</h3>
+<ul>
+<li>• Linux Fundamentals</li>
+<li>• Networking Basics</li>
+<li>• ____________________</li>
+</ul>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+
+<div class="contact-info">
+<p>Email: pruthvivsankhe@gmail.com</p>
+<p>LinkedIn: <a href="#">https://www.linkedin.com/in/pruthvi-sankhe/?originalSubdomain=in</a></p>
+<p>GitHub: <a href="#">____________________</a></p>
+<p>Phone: +91 8788720040</p>
+<p>Location: Mumbai,India</p>
+</div>
+
+</section>
+
+<footer>
+© 2026 Pruthvi Sankhe
+</footer>
+
+</body>
+</html>
