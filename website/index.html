@@ -353,6 +353,41 @@ and modern DevOps practices.
 <footer>
 © 2026 Pruthvi Sankhe
 </footer>
+<script>
+async function fetchGitHubProjects() {
+    const username = "sankhepiu";  // your GitHub username
+    const projectsContainer = document.getElementById("projects-container");
+
+    try {
+        const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated`);
+        const repos = await response.json();
+
+        projectsContainer.innerHTML = "";
+
+        repos
+            .filter(repo => !repo.fork) // removes forked repos
+            .slice(0, 6) // show only 6 projects
+            .forEach(repo => {
+                const projectCard = document.createElement("div");
+                projectCard.className = "project-card";
+
+                projectCard.innerHTML = `
+                    <h3>${repo.name}</h3>
+                    <p>${repo.description || "No description provided."}</p>
+                    <a href="${repo.html_url}" target="_blank">View on GitHub →</a>
+                `;
+
+                projectsContainer.appendChild(projectCard);
+            });
+
+    } catch (error) {
+        projectsContainer.innerHTML = "<p>Unable to load projects.</p>";
+        console.error("Error fetching repos:", error);
+    }
+}
+
+fetchGitHubProjects();
+</script>
 
 </body>
 </html>
