@@ -28,4 +28,4 @@ Every commit automatically updates the live site without manual uploads.
 
 ## Live Demo
 
-🔗 [View Live Portfolio](https://d15538ljsrclk.cloudfront.net)
+🔗 [View Live Portfolio](https://d15538ljjsrlck.cloudfront.net/)
