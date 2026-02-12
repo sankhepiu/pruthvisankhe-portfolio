@@ -22,4 +22,5 @@ jobs:
 
       - name: Upload files to S3
         run: |
-          aws s3 sync . s3://piu-portfolio-site --delete
+          aws s3 sync website s3://piu-portfolio-site --delete
+
