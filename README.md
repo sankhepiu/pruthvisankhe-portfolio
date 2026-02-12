@@ -1,30 +1,36 @@
 # AWS Static Portfolio Deployment
 
-A cloud-hosted portfolio website deployed on AWS using S3 and CloudFront, with automated CI/CD integration via GitHub Actions.
+A production-ready static portfolio deployed on AWS using Amazon S3 for hosting and CloudFront for global content delivery, with automated CI/CD integration via GitHub Actions.
 
 ## Overview
 
-This project demonstrates a production-style deployment workflow:
+This project demonstrates a real-world cloud deployment workflow:
 
-- Static website hosted on Amazon S3  
-- Global content delivery using Amazon CloudFront  
-- HTTPS enabled  
-- Automated CI/CD pipeline triggered on every push to `main`  
-- Secure authentication using IAM and GitHub Secrets  
+- Static website hosted on Amazon S3
+- Global content delivery using Amazon CloudFront
+- HTTPS enabled through CloudFront
+- Automated CI/CD pipeline triggered on every push to the `main` branch
+- Secure credential management using AWS IAM and GitHub Secrets
 
 ## Architecture
 
-GitHub → GitHub Actions → S3 → CloudFront → Live Website
+### Deployment Flow
 
-Every commit automatically updates the live site without manual uploads.
+1. Code is pushed to the GitHub `main` branch  
+2. GitHub Actions workflow is triggered automatically  
+3. Updated files are synced to an Amazon S3 bucket  
+4. CloudFront distributes content globally over HTTPS  
+5. End users access the live portfolio via CloudFront  
+
+This setup ensures consistent, automated, and reliable deployments without manual file uploads.
 
 ## Tech Stack
 
-- Amazon S3  
-- Amazon CloudFront  
-- AWS IAM  
-- GitHub Actions  
-- HTML & CSS  
+- Amazon S3
+- Amazon CloudFront
+- AWS IAM
+- GitHub Actions (CI/CD)
+- HTML & CSS
 
 ## Live Demo
 
